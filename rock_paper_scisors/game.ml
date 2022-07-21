@@ -38,7 +38,12 @@ let int_to_gesture i =
   | 2 -> Rock
   | 3 -> Scissors
 
-
+  let score_to_string res score1 score2 = 
+    match res with 
+    | Win (g1, g2) -> ("Player 1  " ^ (score1+1) ^ " Player 2 " ^ (score2))
+  | Lose (g1, g2) -> ("Player 1  " ^ (score1) ^ " Player 2 " ^ (score2+1))
+  | Tie g -> ("Player 1  " ^ (score1) ^ " Player 2 " ^ (score2))
+  ;;
 
 let result_to_string res = 
   match res with 
@@ -47,13 +52,14 @@ let result_to_string res =
   | Tie g -> ("Two " ^ gesture_to_string g ^ "s, the game is tied")
 ;;
   
-print_string "Choose player 1 hand : Rock (1) Paper (2) or Scisors (3)"
-let hand1 =  read_int();;
+let rec play score1 score2 = 
+  print_string "Choose player 1 hand : Rock (1) Paper (2) or Scisors (3)"
+  let hand1 =  read_int();;
 
-print_string "Choose player 2 hand : Rock (1) Paper (2) or Scisors (3)"
-let hand2 =  read_int();; 
+  print_string "Choose player 2 hand : Rock (1) Paper (2) or Scisors (3)"
+  let hand2 =  read_int();; 
 
+  let res = (hand ( int_to_gesture(hand1)) ( int_to_gesture(hand2)));
 
-let gesture1 = int_to_gesture(hand1);;
-let gesture2 = int_to_gesture(hand2);;
-print_string (result_to_string(hand gesture1 gesture2));;
+  print_string (result_to_string res);;
+  print_string (score_to_string res score1 score2 );;
