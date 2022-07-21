@@ -22,7 +22,7 @@ Rock Paper Scisors game play is as follow:
 
 **Result_to_string res**: identifies the result type to the related string representation of the results.
 
-![img.png](images/sequences_diagram.png)
+![img.png](images/sequence_diagram.png)
 
 
 #### Ocaml script:
@@ -31,12 +31,13 @@ Rock Paper Scisors game play is as follow:
 
 ![img_1.png](images/functions.png)
 
+To see all code : [ocaml file](game.ml)
 
-#### To compile program on Linux or MacOs:
+### To compile program on Linux or MacOs:
 
 **Compile the file named "game" :**
 ```
-ocamlc rock_paper_scisors/game.ml -o game
+ocamlc game.ml -o game
 ```
 
 **Execute the compiled file :**
