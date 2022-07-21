@@ -1,12 +1,7 @@
 open rock_paper_scisors;;
 open OUnit2;;
 
-let result_to_string res = 
-  match res with 
-  | Win (g1, g2) -> ("First player's " ^ gesture_to_string g1 ^ " beats second player's " ^ gesture_to_string g2)
-  | Lose (g1, g2) -> ("Second player's " ^ gesture_to_string g2 ^ " beats first player's " ^ gesture_to_string g1)
-  | Tie g -> ("Two " ^ gesture_to_string g ^ "s, the game is tied")
-;;
+
 
 let test_RockPaperScissors () =
   assert_equal "Second player's Scissors beats first player's Paper" (result_to_string (hand Paper Scissors));
